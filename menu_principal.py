@@ -44,26 +44,6 @@ class barajas():
         #en la que estaba la imagen que se está moviendo
         self.posicion_inicial = None
 
-
-
-        #Se crean las variables que serán utilizadas para el arbol
-        self.user_text = ''
-        self.value_input = ''
-        self.numeros = 0
-        self.base_font_2 = pygame.font.Font(None, 23)
-        self.base_font_3 = pygame.font.Font(None, 28)
-        self.root = None
-        self.length = None
-        self.color_menu = (255, 255, 255)
-        self.color_option = (0, 0, 0)
-        self.rect_combo = pygame.Rect(550, 5, 100, 25) 
-        self.options = ['inorder', 'preorder', 'postorder', 'amplitud']
-        self.draw_menu = False
-        self.rectas_options = []
-        self.eleccion = None
-        self.reccorrido = ''
-        self.cont_arbol = 0
-
         #Se establecen la inscripción que tendrán los botones
         self.base1 = 'Pilas'
         self.base2 = 'Árboles'
@@ -136,51 +116,6 @@ class barajas():
         #variable utilizada para guardar la información de la imagen extraida de las pilas inferiores
         self.tam_image_2 = None
         self.imagen_mov = None
-
-        #variables para grafos
-        self.combo_1 = 'Origen:'
-        self.draw_menu_1 = False
-        self.rect_combo_1 = pygame.Rect(30, 100, 100, 25) 
-        self.eleccion_1 = None
-        self.rectas_options_1 = []
-
-        self.combo_2 = 'Destino:'
-        self.draw_menu_2 = False
-        self.rect_combo_2 = pygame.Rect(190, 100, 100, 25) 
-        self.eleccion_2 = None
-        self.rectas_options_2 = []
-
-        self.img_mapa = pygame.image.load("Imagenes\MapaColombia.jpg")
-        self.tam_mapa_rect =  None
-
-        self.combo_3 = 'Arista:'
-        self.input_rect_origen = pygame.Rect(115, 817, 126, 25) 
-        self.user_text_origen = ""
-        self.input_rect_destino = pygame.Rect(372, 817, 126, 25) 
-        self.user_text_destino = ""
-        self.input_rect_arista = pygame.Rect(610, 817, 70, 25) 
-        self.user_text_arista = ""
-
-        self.text_dijktra = 'Dijktra'
-        self.rect_dijk = pygame.Rect(30, 60, 125, 25) 
-        self.algorithm_dijktra = False
-        self.recorrido_corto = None
-
-        self.text_rutas = 'rutas'
-        self.rect_rutas = pygame.Rect(190, 60, 125, 25) 
-        self.mostrar_rutas = False
-
-        self.combo_4 = "Selected"
-        self.rect_select_arista = pygame.Rect(750, 707, 115, 25) 
-
-        self.ciudades = ['San Andrés', 'Armenia', 'Barranquilla', 'Bucaramanga', 'Bogotá', 'Cali', 'Cartagena',
-                            'Cúcuta', 'Leticia', 'Medellin', 'Monteria', 'Neiva', 'Pereira', 'Pasto', 'Riohacha',
-                            'Santa Marta', 'Valledupar', 'Villavicencio']
-        self.relaciones = []
-        self.rectas_ciudades = []
-        self.dictionary_relations = None
-        self.grafos = []
-        self.otros = []
 
         self.negro = (0,0,0)
         self.blanco = (255,255,255)
@@ -305,15 +240,10 @@ class barajas():
                         cont_cartas = self.control_pila_mouse(cont_cartas)
 
                     elif self.input_rect2.collidepoint(pygame.mouse.get_pos()):
-                        self.terminar_arbol = False
-                        self.win.fill((0,0,0))
                         screen_4 = arbol()
                         screen_4.input_information()
 
-
                     elif self.input_rect3.collidepoint(pygame.mouse.get_pos()):
-                        self.terminar_grafo = False
-                        self.win.fill((0,0,0))
                         #Se llama al archivo que abre la ventana para ejecutar el proceso demostrativos de grafo
                         screen = grafo(self.win, self.ancho, self.alto)
                         screen.inicio_juego()
