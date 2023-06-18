@@ -218,7 +218,7 @@ class grafo():
     #que se utilizaría para desplegar las opciones del combobox
     def combo_origen(self):
         pygame.draw.rect(self.win, self.color_menu, self.rect_combo_1, 0)
-        self.img_1 = pygame.image.load("descarga.png")
+        self.img_1 = pygame.image.load("Imagenes\descarga.png")
         self.rect_mov1 = pygame.Rect(30, 100, 100, 25) 
         self.rect_mov1.left += 100
         self.win.blit(self.img_1, self.rect_mov1)
@@ -227,7 +227,7 @@ class grafo():
     #que se utilizaría para desplegar las opciones del combobox
     def combo_destino(self):
         pygame.draw.rect(self.win, self.color_menu, self.rect_combo_2, 0)
-        self.img_2 = pygame.image.load("descarga.png")
+        self.img_2 = pygame.image.load("Imagenes\descarga.png")
         self.rect_mov2 = pygame.Rect(190, 100, 100, 25) 
         self.rect_mov2.left += 100
         self.win.blit(self.img_2, self.rect_mov2)
