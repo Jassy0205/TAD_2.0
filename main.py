@@ -1,12 +1,4 @@
-'''from ast import Try
-from tercero import juego'''
 
-'''import pygame
-pygame.init()
-
-alto = 750
-ancho = 900
-win = pygame.display.set_mode((ancho,alto))'''
 
 #from taller01_corte03 import listas
 from menu_principal import barajas

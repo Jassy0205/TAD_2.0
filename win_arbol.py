@@ -166,12 +166,12 @@ class arbol():
 
     #Se crea una función que imprima el titulo del primer input: El número de nodos a dibujar
     def input_title(self):
-        text_surface = self.base_font.render(self.base, True, (255,255,50))
+        text_surface = self.base_font.render(self.base, True, (0,255,255))
         self.win.blit(text_surface, (30,10))
 
     #función que imprima el titulo del input de los valores de los nodos
     def input_value_and_father(self):
-        text_surface = self.base_font.render(self.value, True, (255,255,50))
+        text_surface = self.base_font.render(self.value, True, (0,255,255))
         self.win.blit(text_surface, (30,50))
 
     #Función que acciona todo el proceso del arbol
@@ -378,7 +378,7 @@ class arbol():
         contenedor_1 = [self.root]
         contenedor_2 = [self.root.value]
         xinicial = 450
-        yinicial = 100
+        yinicial = 130
         x = xinicial
         y = yinicial
         resta = 170
@@ -426,12 +426,17 @@ class arbol():
 
     #Metodo que dibuja cada uno de los valores de los nodos en el arbol
     def draw_nodes(self, xinicial, yinicial, x, y, valor):
-        if yinicial > 100:
-            pygame.draw.line(self.win, (100,0,105), (x,y+10), (xinicial-5,yinicial+5), 4)
+        if yinicial > 130:
+            pygame.draw.line(self.win, (255,255,255), (x,y+10), (xinicial-5,yinicial+5), 4)
 
-        pygame.draw.circle(self.win, (100,10,255), (xinicial,yinicial), 20, 5)
+        #(100,0,105) color linea, (100,10,255) color circulo
+        pygame.draw.circle(self.win, (255,255,255), (xinicial,yinicial), 20, 20)
 
-        text_surface = self.base_font.render(str(valor), True, (0,255,255))
+        text_surface = self.base_font.render(str(valor), True, (0,0,0))
+
+        if valor >= 10:
+            xinicial = xinicial-6
+
         self.win.blit(text_surface, (xinicial-5,yinicial-10))
         
         pygame.display.flip()
